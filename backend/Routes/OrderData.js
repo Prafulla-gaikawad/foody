@@ -7,10 +7,10 @@ router.post("/orderData", async (req, res) => {
   await data.splice(0, 0, { Order_date: req.body.order_date });
 
   let eId = await Order.findOne({ email: req.body.email });
-  console.log(eId);
+  // console.log(eId);
   if (eId === null) {
     try {
-      console.log(data);
+      // console.log(data);
       await Order.create({
         email: req.body.email,
         order_data: [data],
