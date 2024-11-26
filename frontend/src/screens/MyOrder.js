@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import { baseUrl } from "../URL";
 export default function MyOrder() {
   const [orderData, setorderData] = useState({});
 
   const fetchMyOrder = async () => {
     console.log(localStorage.getItem("userEmail"));
-    await fetch(`http://localhost:5050/api/myOrderData`, {
+    await fetch(`${baseUrl}/api/myOrderData`, {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: "POST",

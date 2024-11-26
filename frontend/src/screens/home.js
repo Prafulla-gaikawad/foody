@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Card from "../Components/Card";
+import { baseUrl } from "../URL";
 
 // import Carousal from "../Components/Carousal";
 
@@ -11,7 +12,7 @@ function Home() {
   const [foodItem, setfoodItem] = useState([]);
 
   const loadData = async () => {
-    let response = await fetch(`http://localhost:5050/api/foodData`, {
+    let response = await fetch(`${baseUrl}/api/foodData`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
