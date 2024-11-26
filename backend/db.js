@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const MONGO_URL =
-  "mongodb://prafullasmailid:praful123@cluster0-shard-00-00.3ll4p.mongodb.net:27017,cluster0-shard-00-01.3ll4p.mongodb.net:27017,cluster0-shard-00-02.3ll4p.mongodb.net:27017/FoodAgain?ssl=true&replicaSet=atlas-hl5eiu-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0";
+// const MONGO_URL = process.env.MONGO_URL;
 const mongoDB = async () => {
   try {
-    await mongoose.connect(MONGO_URL, {
+    await mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
